@@ -13,14 +13,14 @@ function History({Transaction}) {
             <h3>Transaction History</h3>
             <FaAngleRight />
         </div>
-        {showHistory && <div className="absolute top-[50%] left-[50%] bg-white z-[1] w-[90%] h-[90%] p-5 border-2 translate-x-[-50%] translate-y-[-50%] overflow-auto">
+        {
+        showHistory && <div className="absolute top-[50%] left-[50%] bg-white z-[1] w-[90%] h-[90%] p-5 border-2 translate-x-[-50%] translate-y-[-50%] overflow-auto">
             <p className="flex items-center p-3 gap-2"><FaX  onClick={() => setShowHistory(!showHistory)}/> Transaction History</p>
             
-            {Transaction.length > 0 &&
-               <TransactionsHistory Transaction={Transaction} setdelbtn={setdelbtn} delbtn={delbtn}/>
-            }
+            {Transaction.length > 0 && <TransactionsHistory Transaction={Transaction} setdelbtn={setdelbtn} delbtn={delbtn}/>}
             {!Transaction.length > 0 && <p className="text-center m-5 text-[red]">No transactions</p>}
-        </div>}
+        </div>
+        }
     </main>
   )
 }
